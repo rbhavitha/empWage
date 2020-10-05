@@ -35,11 +35,16 @@ else
 	empHrs=0
 fi
 
-echo "Employee Wage Using Case Statement"
-case $randomCheck in
-	$isFullTime)empHrs=8 ;;
-	$isPartTime)empHrs=4 ;;
-	*)
-	empHrs=0 ;;
-esac
-salary=$(($empHrs*$empRatePerHr))
+totalSalary=0;
+numWorkingDays=20;
+for (( day=1; day<=$numWorkingDays; day++ ))
+do
+	case $randomCheck in
+		$isFullTime)empHrs=8 ;;
+		$isPartTime)empHrs=4 ;;
+		*)
+		empHrs=0 ;;
+	esac
+	salary=$(($empHrs*$empRatePerHr))
+	totalSalary=$(( $totalSalary+$salary ))
+done
