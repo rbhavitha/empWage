@@ -83,5 +83,7 @@ do
 done
 totalSalary="$( calDailyWages $totalEmpHrs )"
 echo "daily wages:" ${DailyWages[@]}
+echo "all keys:" ${!DailyWages[@]}
+
 
 
